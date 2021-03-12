@@ -12,17 +12,10 @@ public class ControllerMessage {
 
 	@Autowired private RepoJDBC repoJDBC;
 
-//	@PostMapping("/ajouter")
-//	public @ResponseBody String ajouterMessage(@RequestBody String message) {
-//		System.out.println("MessageBoard : ajouter message");
-//		repoJDBC.addMessage3(message);
-//		return "";
-//	}
-
 	@PostMapping("/ajouterform")
 	public RedirectView ajouterMessageForm(String message) {
 		System.out.println("MessageBoard form : ajouter message");
-		repoJDBC.addMessage3(message);
+		repoJDBC.addMessageA(message);
 		return new RedirectView("nouveau");
 	}
 

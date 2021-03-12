@@ -34,22 +34,11 @@ public class RepoJDBC {
         });
     }
 
-    public int addMessage2(String message) {
-        return jdbcTemplate.update(
-                "INSERT INTO APPMESSAGE VALUES (? ,?)", null, message
-        );
-    }
 
-    public int addMessage3(String message) {
+    public int addMessageA(String message) {
         return jdbcTemplate.update(
                 "INSERT INTO APPMESSAGE VALUES (NULL ,'"+message+"')"
         );
-    }
-
-    public int addMessage(final String message) {
-        final Map<String, Object> parameters = new HashMap<>();
-        parameters.put("CONTENT", message);
-        return simpleJdbcInsert.execute(parameters);
     }
 
 }

