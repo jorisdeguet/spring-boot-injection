@@ -4,18 +4,26 @@ import org.sbac.sql.RepoJDBC;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.view.RedirectView;
 
 
 @Controller
-public class WebServiceMessage {
+public class ControllerMessage {
 
 	@Autowired private RepoJDBC repoJDBC;
 
-	@PostMapping("/ajouter")
-	public @ResponseBody String ajouterMessage(@RequestBody String message) {
-		System.out.println("MessageBoard : ajouter message");
+//	@PostMapping("/ajouter")
+//	public @ResponseBody String ajouterMessage(@RequestBody String message) {
+//		System.out.println("MessageBoard : ajouter message");
+//		repoJDBC.addMessage3(message);
+//		return "";
+//	}
+
+	@PostMapping("/ajouterform")
+	public RedirectView ajouterMessageForm(String message) {
+		System.out.println("MessageBoard form : ajouter message");
 		repoJDBC.addMessage3(message);
-		return "";
+		return new RedirectView("nouveau");
 	}
 
 
@@ -35,5 +43,9 @@ public class WebServiceMessage {
 		return result;
 	}
 
+	@GetMapping("/nouveau")
+	public String nouveau() {
+		return "nouveau";
+	}
 
 }

@@ -3,11 +3,13 @@ package org.sbac;
 import org.springframework.boot.jdbc.DataSourceBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
-import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;
 
 import javax.sql.DataSource;
 
+/**
+ * Les scripts dans le dossier resources appelés schema.sql et data.sql sont automatiquement
+ * chargé par Spring, c'est par convention
+ */
 @Configuration
 public class ConfigurationSourceDonnees {
     
