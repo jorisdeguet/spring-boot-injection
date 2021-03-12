@@ -36,6 +36,8 @@ public class ControllerMessage {
 		return result;
 	}
 
+	// Vue.js Angular Reactive
+
 	@GetMapping("/nouveau")
 	public String nouveau() {
 		return "nouveau";

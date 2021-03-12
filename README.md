@@ -11,6 +11,8 @@ EXPLOIT envoyer
 '); DELETE FROM APPMESSAGE; --
 '); UPDATE APPMESSAGE SET CONTENT='Allez tous sur supersitepirate.com'; --
 
+'); UPDATE APPMESSAGE SET CONTENT='<script>alert("Connard")</script>'; --
+
 Injection SQL : la plupart du temps des systèmes vieux avec SQL direct.
 Se repose sur le fait que les développeurs contruise la requête en faisant le + de morceaux à eux
 et de morceaux de l'utilisateur. 
@@ -24,6 +26,13 @@ La plupart des frameworks web ne font pas confiance aux données quand elles son
 
 Conclusion :  Pas trop dur d'éviter les problèmes, utilise les frameworks
 qui font bien attention.
+
+
+SQL avec des + 
+Parametres
+PreparedStatement
+Plateforme Middleware accéder aux données
+
 
 
 

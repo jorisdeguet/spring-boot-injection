@@ -1,5 +1,7 @@
 package org.sbac.sql;
 
+import org.jsoup.Jsoup;
+import org.jsoup.safety.Whitelist;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
@@ -36,8 +38,9 @@ public class RepoJDBC {
 
 
     public int addMessageA(String message) {
+        message = Jsoup.clean(message, Whitelist.simpleText());
         return jdbcTemplate.update(
-                "INSERT INTO APPMESSAGE VALUES (NULL ,'"+message+"')"
+                "INSERT INTO APPMESSAGE VALUES (? ,?)", null, message
         );
     }
 
