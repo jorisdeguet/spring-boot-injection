@@ -17,7 +17,7 @@ public class ConfigurationSourceDonnees {
     public DataSource getDataSource() {
         DataSourceBuilder dataSourceBuilder = DataSourceBuilder.create();
         dataSourceBuilder.driverClassName("org.h2.Driver");
-        dataSourceBuilder.url("jdbc:h2:mem:test");
+        dataSourceBuilder.url("jdbc:h2:mem:test;MODE=LEGACY");
         dataSourceBuilder.username("SA");
         dataSourceBuilder.password("");
         return dataSourceBuilder
